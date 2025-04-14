@@ -1,28 +1,36 @@
-# 🔐 ssh-copy-id for Windows (Rust Edition)
+🔐 ssh-copy-id for Windows is a native, Rust-powered CLI utility that securely copies your public SSH key to a remote Linux/Unix server — just like the built-in tool on Linux.
 
-A fast, native Windows CLI utility to install your SSH public key on a remote Linux/Unix server — just like the classic `ssh-copy-id` on Linux!
+✅ Built specifically for Windows
+✅ No admin rights required
+✅ Works from CMD, PowerShell, or Windows Terminal
+✅ Adds itself to your user PATH
+✅ Fast, safe, portable
 
-✅ Written in Rust  
-✅ Designed for Windows 10/11  
-✅ Installs cleanly into `Program Files`  
-✅ Supports elevation, user-friendly CLI, and automatic PATH setup
+🚀 Features
 
----
+📂 Appends your public key to ~/.ssh/authorized_keys
+🔐 Supports password auth and SSH agent
+🧰 Installs to %LOCALAPPDATA%\Programs\ssh-copy-id
+🛠️ CLI flags: --install, --uninstall, --key, --show-password
+🤖 Written in Rust for performance and reliability
+📦 How to Install
 
-## 🧩 Features
+Download: ssh-copy-id-windows.zip
+Extract anywhere
+Run in terminal:
+.\ssh-copy-id.exe --install
+✅ The tool will copy itself to:
+C:\Users\<you>\AppData\Local\Programs\ssh-copy-id\
+and update your PATH automatically.
+Open a new terminal, and run:
+ssh-copy-id --help
+🧪 Example Usage
+ssh-copy-id --user root --host your.server.com
+ssh-copy-id --user user --host host.com --key C:\Users\You\.ssh\id_ed25519.pub
 
-- 📂 Appends your public key to `~/.ssh/authorized_keys` on a remote host
-- 🔐 Uses SSH Agent or password auth
-- ✅ No external dependencies — runs natively on Windows
-- ⚡ Installs with `--install`, removes with `--uninstall`
-- 🧠 Adds itself to PATH for global terminal access
-- 🧼 Automatically cleans up temporary install scripts
+🧼 Uninstall
+ssh-copy-id --uninstall
+Removes the binary and cleans your PATH.
 
----
-
-## 📥 Installation
-
-### 📦 Option 1: Install via Command Line (First-Time Setup)
-
-```CMD or Powershell:
-ssh-copy-id.exe --install
+📄 License
+MIT — use it, fork it, ship it.
