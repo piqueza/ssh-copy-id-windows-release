@@ -1,0 +1,14 @@
+# Ignore Rust build output
+/target/
+
+# Optional: Ignore editor configs
+.idea/
+.vscode/
+
+# Optional: OS & temp files
+.DS_Store
+Thumbs.db
+
+# Optional: Logs, dumps, cache
+*.log
+*.tmp
